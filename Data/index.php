@@ -1,3 +1,7 @@
+<?php
+    require_once ('C:/xampp/htdocs/Final/lib/plain.php');
+    ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,8 +88,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white text-center">
-                    <h4 class="home-small-title">Awesome Design</h4>
+                    <h4 class="home-small-title">Mission Statement</h4>
                     <h1 class="home-title">We love make things amazing and simple</h1>
+
+
+                    <?php
+                    loadPage('overview');
+                    
+                    ?>
+
                     <p class="pt-3 home-desc mx-auto">Maecenas class semper class semper sollicitudin lectus lorem
                         iaculis imperdiet aliquam vehicula tempor auctor curabitur pede aenean ornare.</p>
                     <p class="play-shadow mt-4" data-bs-toggle="modal" data-bs-target="#watchvideomodal"><a
