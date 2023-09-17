@@ -1,3 +1,3 @@
 <?php
-//This is the CSV File
+//This is for reading the CSV File
 ?>
