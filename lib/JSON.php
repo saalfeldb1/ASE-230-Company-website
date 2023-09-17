@@ -1,3 +1,6 @@
 <?php
-//This is the JSON File
+//This is for reading JSON File
+
+//Product and services in JSON?
+
 ?>

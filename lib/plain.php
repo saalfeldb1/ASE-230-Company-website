@@ -1,3 +1,3 @@
 <?php
-//This is the Plain Text File
+//This is for reading the Plain Text File
 ?>
