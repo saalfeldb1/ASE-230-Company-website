@@ -1,4 +1,5 @@
 <?php
+//This is for reading all the plain text
 
 function loadPlainPage($page) {
     $path= $page.'.txt';

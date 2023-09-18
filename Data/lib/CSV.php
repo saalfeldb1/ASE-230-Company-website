@@ -1,5 +1,5 @@
 <?php
-//This is for reading the CSV File
+//This is for reading the Awards
 
 function loadCSVPage($page){
 
@@ -17,7 +17,7 @@ function loadCSVPage($page){
         fclose($file);
     } 
 
-//This is for reading the CSV File
+//This is for reading the Team Members
 
 
 

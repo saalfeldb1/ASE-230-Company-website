@@ -1,5 +1,5 @@
 <?php
-//This is for reading JSON File
+//This is for reading The Products and Services
 
 function loadJSONProducts($page){
     $jsonData = file_get_contents($page.'.json');
