@@ -1,5 +1,5 @@
 <?php
-    require_once ('C:/xampp/htdocs/Final/lib/plain.php');
+    //require_once ('/lib/plain.php');
     ?>
 
 
@@ -93,7 +93,7 @@
 
 
                     <?php
-                    loadPage('overview');
+                    //loadPage('overview');
                     
                     ?>
 
@@ -352,6 +352,9 @@
                                 <img alt="" src="images/team/img-1.jpg" class="img-fluid rounded">
                             </div>
                         </div>
+                        <!--Create a for loop for all members that are read from another file so any amount of people could participate
+                    Add the work description of the members of the team as well
+                    -->
                         <h4 class="team-name">Frank Johnson</h4>
                         <p class="text-uppercase team-designation">CEO</p>
                     </div>
