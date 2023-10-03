@@ -34,6 +34,7 @@
             $currentContent = file_get_contents($filename);
 
             // Display a form for editing the content
+            echo "File Details:";
             echo "<form method='POST' action=''>";
             echo "<textarea name='content' rows='10' cols='40'>$currentContent</textarea><br>";
             echo "<input type='submit' name='update' value='Save Changes'>";

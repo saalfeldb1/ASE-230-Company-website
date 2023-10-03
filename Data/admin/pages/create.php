@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Item</title>
+    <title>Create File</title>
 </head>
 <body>
-    <h1>Create Item</h1>
+    <h1>Create New Page</h1>
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,10 +12,10 @@
         $title = $_POST["title"];
         $description = $_POST["description"];
 
-        // Generate a filename based on the title
+        // make filename
         $filename = $title . '.txt';
 
-        // Create a new text file with the given title and description
+        // Create a new text file with title and description
         $fileContent = $description;
         file_put_contents($filename, $fileContent);
 
@@ -23,9 +23,9 @@
     }
     ?>
 
-    <!-- Create item form -->
+
     <form method="POST" action="">
-        <label for="title">Title:</label>
+        <label for="title">Filename:</label>
         <input type="text" id="title" name="title" required><br>
 
         <label for="description">Description:</label><br>

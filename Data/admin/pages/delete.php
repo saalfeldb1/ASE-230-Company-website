@@ -22,9 +22,9 @@
                 header("Location: index.php");
 
             } elseif (isset($_POST['cancel'])) {
-                // If the user cancels the deletion, redirect to the detail page
+                // If the user cancels the deletion
                 header("Location: detail.php?file=$filename");
-                exit; // Make sure to exit after performing the redirection
+                exit;
             } else {
                 // Display a confirmation message and form
                 echo "<p>Are you sure you want to delete this item?</p>";
