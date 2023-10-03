@@ -1,3 +1,3 @@
 # ASE-230-Company-website
-Final PHP Project
+PHP Project
 Brayden Saalfeld
