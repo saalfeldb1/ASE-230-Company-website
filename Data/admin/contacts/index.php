@@ -40,6 +40,8 @@
             echo "<tr><td colspan='4'>No contact requests found.</td></tr>";
         }
         ?>
+  
     </table>
+    <a href="../admin.php">Go to Admin Dashboard</a></br>
 </body>
 </html>

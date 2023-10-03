@@ -40,6 +40,7 @@
     ?>
 
     <br>
-    <a href="create.php">Create New Item</a>
+    <a href="create.php">Create New Item</a></br>
+    <a href="../admin.php">Go to Admin Dashboard</a></br>
 </body>
 </html>

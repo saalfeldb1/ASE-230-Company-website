@@ -36,6 +36,7 @@
     </table>
 
     <br>
-    <a href="create.php">Create New Product</a>
+    <a href="create.php">Create New Product</a></br>
+    <a href="../admin.php">Go to Admin Dashboard</a></br>
 </body>
 </html>
