@@ -19,7 +19,7 @@
         $fileContent = $description;
         file_put_contents($filename, $fileContent);
 
-        header("Location: detail.php?file=$filename");
+        header("Location: index.php");
     }
     ?>
 

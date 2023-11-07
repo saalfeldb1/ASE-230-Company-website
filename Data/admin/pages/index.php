@@ -4,43 +4,43 @@
     <title>Items</title>
 </head>
 <body>
-    <h1>Plain text pages</h1>
+    <h1>Pages</h1>
 
     <?php
-    // Get a list of all text files in the current directory
-    $files = glob("*.txt");
+    require_once('pages.php');
+    // Create a new page
+PageManager::createPage("About Us", "Welcome to our About Us page.");
 
-    if (empty($files)) {
-        echo "<p>No items found.</p>";
-    } else {
-        echo "<table border='1'>";
+// Read and display pages
+$pages = PageManager::readPages();
+
+if (empty($pages)) {
+    echo "<p>No items found.</p>";
+} else {
+    echo "<table border='1'>";
+    echo "<tr>";
+    echo "<th>Title</th>";
+    echo "<th>Preview</th>";
+    echo "<th>Action</th>";
+    echo "</tr>";
+
+    foreach ($pages as $page) {
         echo "<tr>";
-        echo "<th>Filename</th>";
-        echo "<th>Preview</th>";
-        echo "<th>Action</th>";
+        echo "<td>{$page->getTitle()}</td>";
+        echo "<td>" . substr($page->getContent(), 0, 50) . "...</td>";
+        echo "<td><a href='detail.php?title={$page->getTitle()}'>Details</a></td>";
         echo "</tr>";
-
-        foreach ($files as $file) {
-            // Extract the title (filename) from the filename
-            $title = ucfirst(str_replace('_', ' ', pathinfo($file, PATHINFO_FILENAME)));
-
-            // Read the first couple of words from the file's content
-            $content = file_get_contents($file);
-            $preview = implode(' ', array_slice(str_word_count($content, 1), 0, 3));
-
-            echo "<tr>";
-            echo "<td>$title</td>";
-            echo "<td>$preview</td>";
-            echo "<td><a href='detail.php?file=$file'>Details</a></td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
     }
+
+    echo "</table>";
+}
+
+// Provide links for CRUD operations
+echo '<br><a href="create.php">Create New Page</a></br>';
+echo '<a href="../admin.php">Go to Admin Dashboard</a></br>';
     ?>
 
     <br>
-    <a href="create.php">Create New Item</a></br>
-    <a href="../admin.php">Go to Admin Dashboard</a></br>
+  
 </body>
 </html>
