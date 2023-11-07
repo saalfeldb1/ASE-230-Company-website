@@ -6,35 +6,25 @@
 <body>
     <h1>Our Awards</h1>
     
-    <table >
+    <table border="1">
         <tr>
             <th>Award Name</th>
             <th>Description</th>
-           
+            <th>Action</th> <!-- Add a new column for the "Details" button -->
         </tr>
         
         <?php
-        // Check if the CSV file exists
-        if ($team = fopen("awards.csv", "r")) {
-           
+        require_once('CSVHelper.php');
+        
+        // Get a list of awards
+        $awards = CSVHelper::getAwards();
 
-            // Read each row from the CSV file
-            while ($data = fgetcsv($team)) {            
-
-                // Extract data from the CSV row
-                $name = $data[0];
-                $description = $data[1];
-              
-
-                echo "<tr>";
-                echo "<td>$name</td>";
-                echo "<td>$description</td>";
-                echo "<td><a href='detail.php?name=$name'>Edit</a></td>";
-                echo "</tr>";
-            }
-            fclose($team);
-        } else {
-            echo "<tr><td colspan='4'>No awards found.</td></tr>";
+        foreach ($awards as $award) {
+            echo "<tr>";
+            echo "<td>{$award[0]}</td>"; 
+            echo "<td>{$award[1]}</td>"; 
+            echo "<td><a href='detail.php?name={$award[0]}'>Details</a></td>"; 
+            echo "</tr>";
         }
         ?>
     </table>

@@ -23,7 +23,7 @@
             
             // Check if the current row matches the team member to display
             if ($award === $nameToDisplay) {
-                echo "<h2>$award</h2>";
+                echo "<h2>Name: $award</h2>";
                 echo "<p><strong>Description:</strong> $description</p>";
           
                 // Add buttons for editing and deleting

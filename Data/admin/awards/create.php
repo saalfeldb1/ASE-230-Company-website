@@ -7,25 +7,20 @@
     <h1>Add New Award</h1>
     
     <?php
+    require_once('CSVHelper.php');
+
     // Check if the form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve form data
         $name = $_POST["name"];
-        $position = $_POST["description"];
+        $description = $_POST["description"];
 
-        // Check if the CSV file exists
-        if (($handle = fopen("awards.csv", "a")) !== false) {
-            // Create a new row in the CSV file with the submitted data
-            fputcsv($handle, [$name, $position, $email]);
-            
-            fclose($handle);
+        // Create a new award
+        CSVHelper::createAward($name, $description);
 
-            // Redirect to the edit page for the newly created team member
-            header("Location: edit.php?name={$name}");
-            exit;
-        } else {
-            echo "<p>Error: Unable to open the file.</p>";
-        }
+        // Redirect to the awards list
+        header("Location: index.php");
+        exit;
     }
     ?>
 
